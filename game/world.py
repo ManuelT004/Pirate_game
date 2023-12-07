@@ -35,7 +35,7 @@ class World (context.Context):
         self.locs[self.homex][self.homey] = homeport.HomePort (self.homex, self.homey, self)
 
         #Add new islands to this list:
-        island_list = [island.Island]
+        island_list = [island.Island,]
         for cur_island in island_list:
             placed = False
             while placed == False:
@@ -53,6 +53,11 @@ class World (context.Context):
         #Test island: always start off next to a test island. Swap in your island to test yours.
         testland = island.Island (self.startx, self.starty+1, self)
         self.locs[self.startx][self.starty+1] = testland
+
+        #this is code manny made to test mysterious island
+        mysteriousisland = mysterious_island.Island (self.startx - 1, self.starty, self)
+        self.locs[self.startx - 1][self.starty] = mysteriousisland
+
 
         # Peaceful island directly to the right of the spawning location.
         peacefulIsland = PeacefulIsland.PeacefulIsland(self.startx + 1, self.starty, self)

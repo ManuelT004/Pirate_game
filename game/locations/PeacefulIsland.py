@@ -4,7 +4,6 @@ from game.display import announce
 from game.events import *
 from game.items import Item
 import random
-import numpy
 from game import event
 from game.combat import Monster
 import game.combat as combat
